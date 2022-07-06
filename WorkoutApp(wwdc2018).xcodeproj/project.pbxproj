@@ -22,6 +22,9 @@
 		1DBD1A9F28759357002ACABB /* ElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD1A9E28759357002ACABB /* ElapsedTimeView.swift */; };
 		1DBD1AA128759827002ACABB /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD1AA028759827002ACABB /* ControlsView.swift */; };
 		1DBD1AA528759A15002ACABB /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD1AA428759A15002ACABB /* SummaryView.swift */; };
+		1DBD1AA728759F39002ACABB /* ActivityRingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD1AA628759F39002ACABB /* ActivityRingsView.swift */; };
+		1DBD1AA92875A4B7002ACABB /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD1AA82875A4B7002ACABB /* WorkoutManager.swift */; };
+		1DBD1AAD2875AA37002ACABB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBD1AAC2875AA37002ACABB /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,10 @@
 		1DBD1A9E28759357002ACABB /* ElapsedTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElapsedTimeView.swift; sourceTree = "<group>"; };
 		1DBD1AA028759827002ACABB /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
 		1DBD1AA428759A15002ACABB /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		1DBD1AA628759F39002ACABB /* ActivityRingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRingsView.swift; sourceTree = "<group>"; };
+		1DBD1AA82875A4B7002ACABB /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
+		1DBD1AAA2875AA37002ACABB /* WorkoutApp(wwdc2018) WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WorkoutApp(wwdc2018) WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		1DBD1AAC2875AA37002ACABB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.5.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DBD1AAD2875AA37002ACABB /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +112,7 @@
 				1DBD1A702875858E002ACABB /* WorkoutApp(wwdc2018) WatchKit App */,
 				1DBD1A7B28758590002ACABB /* WorkoutApp(wwdc2018) WatchKit Extension */,
 				1DBD1A692875858E002ACABB /* Products */,
+				1DBD1AAB2875AA37002ACABB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +137,7 @@
 		1DBD1A7B28758590002ACABB /* WorkoutApp(wwdc2018) WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				1DBD1AAA2875AA37002ACABB /* WorkoutApp(wwdc2018) WatchKit Extension.entitlements */,
 				1DBD1A7C28758590002ACABB /* WorkoutApp_wwdc2018_App.swift */,
 				1DBD1A7E28758590002ACABB /* StartView.swift */,
 				1DBD1A8028758590002ACABB /* NotificationController.swift */,
@@ -137,6 +147,8 @@
 				1DBD1A9C287590E9002ACABB /* MetricsView.swift */,
 				1DBD1A9E28759357002ACABB /* ElapsedTimeView.swift */,
 				1DBD1AA428759A15002ACABB /* SummaryView.swift */,
+				1DBD1AA82875A4B7002ACABB /* WorkoutManager.swift */,
+				1DBD1AA628759F39002ACABB /* ActivityRingsView.swift */,
 				1DBD1A8428758590002ACABB /* ComplicationController.swift */,
 				1DBD1A8628758591002ACABB /* Assets.xcassets */,
 				1DBD1A8B28758591002ACABB /* Info.plist */,
@@ -152,6 +164,14 @@
 				1DBD1A8928758591002ACABB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1DBD1AAB2875AA37002ACABB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DBD1AAC2875AA37002ACABB /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,7 +304,9 @@
 				1DBD1A9F28759357002ACABB /* ElapsedTimeView.swift in Sources */,
 				1DBD1AA128759827002ACABB /* ControlsView.swift in Sources */,
 				1DBD1A8128758590002ACABB /* NotificationController.swift in Sources */,
+				1DBD1AA728759F39002ACABB /* ActivityRingsView.swift in Sources */,
 				1DBD1A9D287590E9002ACABB /* MetricsView.swift in Sources */,
+				1DBD1AA92875A4B7002ACABB /* WorkoutManager.swift in Sources */,
 				1DBD1A7F28758590002ACABB /* StartView.swift in Sources */,
 				1DBD1A8528758590002ACABB /* ComplicationController.swift in Sources */,
 				1DBD1A7D28758590002ACABB /* WorkoutApp_wwdc2018_App.swift in Sources */,
@@ -426,6 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "WorkoutApp(wwdc2018) WatchKit Extension/WorkoutApp(wwdc2018) WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WorkoutApp(wwdc2018) WatchKit Extension/Preview Content\"";
@@ -434,7 +457,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WorkoutApp(wwdc2018) WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "WorkoutApp(wwdc2018) WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = WorkoutApp_wwdc2018__WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -458,6 +481,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "WorkoutApp(wwdc2018) WatchKit Extension/WorkoutApp(wwdc2018) WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WorkoutApp(wwdc2018) WatchKit Extension/Preview Content\"";
@@ -466,7 +490,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WorkoutApp(wwdc2018) WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "WorkoutApp(wwdc2018) WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = WorkoutApp_wwdc2018__WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (

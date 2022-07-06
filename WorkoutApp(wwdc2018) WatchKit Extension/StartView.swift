@@ -9,6 +9,7 @@ import SwiftUI
 import HealthKit
 
 struct StartView: View {
+    @EnvironmentObject var workoutManager: WorkoutManager
     var workoutType: [WorkoutType] = [
         WorkoutType(type: .cycling, name: "Cycling"),
         WorkoutType(type: .walking, name: "Walking"),
@@ -17,11 +18,18 @@ struct StartView: View {
     
     var body: some View {
         List(workoutType){ type in
-            NavigationLink(type.name, destination: SessionPagingView())
-                .padding(EdgeInsets(top: 15, leading: 5, bottom: 15, trailing: 5))
+            NavigationLink(
+                type.name,
+                destination: SessionPagingView(),
+                tag: type.type,
+                selection: $workoutManager.selectedWorkout
+            ).padding(EdgeInsets(top: 15, leading: 5, bottom: 15, trailing: 5))
         }
         .listStyle(.carousel)
         .navigationTitle("Workouts")
+        .onAppear{
+            workoutManager.requestAuthorization()
+        }
     }
 }
 

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import HealthKit
 struct SummaryView: View {
     @State private var durationFormatter:DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
@@ -19,7 +19,8 @@ struct SummaryView: View {
         ScrollView(.vertical){
             VStack(alignment: .leading){
                 SummaryMetricView(
-                    title: "Total Time", value: durationFormatter.string(for: 30*60 + 15) ?? "").tint(Color.yellow)
+                    title: "Total Time",
+                    value: durationFormatter.string(for: 30*60+15) ?? "").accentColor(Color.yellow)
                 SummaryMetricView(
                     title: "TotalDistance", value: Measurement(
                         value: 1625,
@@ -30,7 +31,7 @@ struct SummaryView: View {
                             usage: .road
                         )
                     )
-                ).tint(Color.green)
+                ).accentColor(Color.green)
                 SummaryMetricView(
                     title: "Total Energy",
                     value: Measurement(
@@ -42,8 +43,25 @@ struct SummaryView: View {
                             usage: .workout,
                             numberFormatStyle: .number)
                     )
-                ).tint(Color.pink)
+                ).accentColor(Color.pink)
+                SummaryMetricView(
+                    title: "Avg. Heart Rate",
+                    value: 143
+                        .formatted(
+                            .number.precision(.fractionLength(0))
+                        )
+                        + " bpm"
+                ).accentColor(Color.pink)
+                Text("Activity Rings")
+                ActivityRingsView(healthStore: HKHealthStore()
+                ).frame(width: 50, height:50)
+                Button("Done"){
+                    
+                }
+                .scenePadding()
             }
+            .navigationTitle("Summary")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

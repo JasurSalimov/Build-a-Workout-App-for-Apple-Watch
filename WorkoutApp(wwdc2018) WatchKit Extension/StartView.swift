@@ -28,8 +28,8 @@ struct StartView: View {
         .listStyle(.carousel)
         .navigationTitle("Workouts")
         .onAppear{
-            workoutManager.requestAuthorization()
-        }
+            
+          }
     }
 }
 

@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct MetricsView: View {
+    @EnvironmentObject var workoutManager: WorkoutManager
     var body: some View {
         VStack(alignment: .leading){
             ElapsedTimeView(
-                elapsedTime: 3*60 + 15.24, showSubseconds: true
+                elapsedTime: workoutManager.builder?.elapsedTime ?? 0, showSubseconds: true
             ).foregroundColor(Color.yellow)
             Text(
                 Measurement(
-                    value: 47,
+                    value: workoutManager.activeEnergy,
                     unit: UnitEnergy.kilocalories
                 ).formatted(
                     .measurement(
@@ -26,14 +27,14 @@ struct MetricsView: View {
                 )
             )
             Text(
-                153.formatted(
+                workoutManager.heartRate.formatted(
                     .number.precision(.fractionLength(0))
                 )
                 + " bpm"
             )
             Text(
             Measurement(
-                value: 515,
+                value: workoutManager.distance,
                 unit: UnitLength.meters
             ).formatted(
                 .measurement(
@@ -58,3 +59,26 @@ struct MetricsView_Previews: PreviewProvider {
         MetricsView()
     }
 }
+//
+//
+//private struct MetricsTimeLineSchedule: TimelineSchedule{
+//  
+//  
+//    
+//    var startDate: Date
+//    
+//    init(from startDate: Date){
+//        self.startDate = startDate
+//    }
+//    
+//    func entries(from startDate: Date, mode: Mode) -> some Sequence {
+//        PeriodicTimelineSchedule.Entries{
+//            PeriodicTimelineSchedule(
+//                from: self.startDate,
+//                by: (mode == .lowFrequency ? 1.0 : 1.0 / 30.0)
+//            ).entries(
+//                from: startDate,
+//                mode: mode)
+//        }
+//    }
+//}

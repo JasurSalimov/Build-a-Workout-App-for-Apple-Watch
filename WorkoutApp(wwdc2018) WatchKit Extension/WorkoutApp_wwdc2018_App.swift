@@ -15,6 +15,9 @@ struct WorkoutApp_wwdc2018_App: App {
             NavigationView {
                 StartView()
             }
+            .sheet(isPresented: $workoutManager.showingSummaryView, content: {
+                SummaryView()
+            })
             .environmentObject(workoutManager)
         }
 
